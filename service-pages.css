@@ -60,21 +60,17 @@ video {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
   text-decoration: none;
   color: var(--white);
   font-family: "Sora", sans-serif;
   font-weight: 700;
 }
 
-.brand-mark {
-  width: 34px;
-  height: 17px;
-  border: 3px solid var(--orange);
-  border-top: 0;
-  border-right: 0;
-  transform: skewX(-24deg);
-  border-radius: 4px;
+.brand-logo {
+  width: clamp(150px, 18vw, 208px);
+  height: auto;
+  display: block;
 }
 
 .desktop-nav {
@@ -324,6 +320,17 @@ h2 {
   gap: 8px;
 }
 
+.contact-actions {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.contact-actions .btn {
+  width: 100%;
+}
+
 .contact-form {
   background: #fff;
   border: 1px solid rgba(11, 29, 51, 0.15);
@@ -364,7 +371,7 @@ h2 {
 .site-footer {
   background: #08111f;
   color: #d6e0ea;
-  padding: 20px 0 90px;
+  padding: 20px 0;
 }
 
 .footer-wrap {
@@ -375,30 +382,94 @@ h2 {
 
 .footer-wrap a {
   color: #fff;
+  text-decoration: none;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-brand img {
+  width: clamp(132px, 16vw, 176px);
+  height: auto;
+  display: block;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 .mobile-sticky {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 60;
   display: none;
-  background: rgba(8, 17, 31, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mobile-header-actions {
+  display: none;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-icon-btn {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.mobile-icon-btn.wa {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.mobile-menu-toggle {
+  cursor: pointer;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-icon-btn.menu {
+  min-width: 56px;
+}
+
+.mobile-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.mobile-icon-btn.wa:hover {
+  background: #d9681b;
+}
+
+.footer-links a:hover {
+  color: #ffbf89;
+}
+
+.site-header .desktop-nav {
+  transition: opacity 0.2s ease;
+}
+
+.nav-wrap.menu-open .desktop-nav {
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-sticky a {
-  flex: 1;
-  text-align: center;
   color: #fff;
-  text-decoration: none;
-  padding: 12px 8px;
-  font-weight: 700;
-}
-
-.mobile-sticky a:nth-child(2) {
-  background: var(--orange);
 }
 
 .reveal {
@@ -413,8 +484,64 @@ h2 {
 }
 
 @media (max-width: 960px) {
+  .nav-wrap > .btn {
+    display: none;
+  }
+
+  .nav-wrap {
+    min-height: 80px;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: min(46vw, 190px);
+  }
+
+  .mobile-header-actions {
+    display: inline-flex;
+  }
+
   .desktop-nav {
     display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 4vw;
+    right: 4vw;
+    background: rgba(8, 17, 31, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    box-shadow: 0 18px 30px rgba(2, 7, 14, 0.42);
+    padding: 10px;
+    z-index: 70;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav-wrap.menu-open .desktop-nav {
+    display: flex;
+  }
+
+  .desktop-nav .menu-group {
+    display: grid;
+    gap: 8px;
+  }
+
+  .desktop-nav .mega-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .desktop-nav .menu-parent::after {
+    content: "";
   }
 
   .two-col,
@@ -423,11 +550,12 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .site-footer {
-    padding-bottom: 120px;
+  .contact-actions {
+    grid-template-columns: 1fr;
   }
 
-  .mobile-sticky {
-    display: flex;
+  .footer-wrap {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

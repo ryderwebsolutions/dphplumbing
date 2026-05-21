@@ -14,55 +14,30 @@ const revealObserver = new IntersectionObserver(
 
 revealNodes.forEach((node) => revealObserver.observe(node));
 
-const mailForms = document.querySelectorAll('.js-mail-form');
+const mobileMenuToggles = document.querySelectorAll('.js-mobile-menu-toggle');
 
-mailForms.forEach((form) => {
-  const note = form.querySelector('.form-note');
-  const title = form.dataset.formTitle || 'New DPH Plumbing Website Enquiry';
-  const preferredType = form.dataset.projectType || '';
-
-  if (!note) {
+mobileMenuToggles.forEach((toggle) => {
+  const navWrap = toggle.closest('.nav-wrap');
+  if (!navWrap) {
     return;
   }
 
-  if (preferredType) {
-    const projectTypeSelect = form.querySelector('[name="projectType"]');
-    if (projectTypeSelect && !projectTypeSelect.value) {
-      projectTypeSelect.value = preferredType;
-    }
-  }
+  toggle.addEventListener('click', () => {
+    const isOpen = navWrap.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+});
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    if (!form.checkValidity()) {
-      note.textContent = 'Please complete all required fields before sending your enquiry.';
+document.addEventListener('click', (event) => {
+  document.querySelectorAll('.nav-wrap.menu-open').forEach((navWrap) => {
+    if (navWrap.contains(event.target)) {
       return;
     }
 
-    const formData = new FormData(form);
-    const lines = [
-      `Name: ${formData.get('name')}`,
-      `Phone: ${formData.get('phone')}`,
-      `Email: ${formData.get('email')}`,
-      `Location: ${formData.get('location')}`,
-      `Project Type: ${formData.get('projectType')}`,
-      '',
-      `${formData.get('message')}`
-    ];
-
-    const subject = encodeURIComponent(title);
-    const body = encodeURIComponent(lines.join('\n'));
-    window.location.href = `mailto:shanedunnewx@gmail.com?subject=${subject}&body=${body}`;
-
-    note.textContent = 'Opening your email app now. Attach project photos if available.';
-    form.reset();
-
-    if (preferredType) {
-      const projectTypeSelect = form.querySelector('[name="projectType"]');
-      if (projectTypeSelect) {
-        projectTypeSelect.value = preferredType;
-      }
+    navWrap.classList.remove('menu-open');
+    const toggle = navWrap.querySelector('.js-mobile-menu-toggle');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
     }
   });
 });

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,13 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/media/favicon.png">
   <link rel="stylesheet" href="service-pages.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html"><span class="brand-mark"></span><span>DPH Plumbing</span></a>
-      <nav class="desktop-nav" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="DPH Plumbing home">
+        <img class="brand-logo" src="assets/media/dph-logo.png" alt="DPH Plumbing" loading="eager" decoding="async">
+      </a>
+      <nav class="desktop-nav" id="main-navigation" aria-label="Primary">
         <a href="index.html">Home</a>
         <div class="menu-group">
           <a class="menu-parent" href="heating-system-design.html">Services</a>
@@ -33,6 +36,12 @@
         <a href="index.html#contact">Contact</a>
       </nav>
       <a class="btn btn-solid" href="tel:+353872545939">Call 087 2545939</a>
+      <div class="mobile-header-actions" aria-label="Mobile quick actions">
+        <a class="mobile-icon-btn" href="tel:+353872545939" aria-label="Call DPH">Call</a>
+        <a class="mobile-icon-btn wa" href="https://wa.me/353872545939" target="_blank" rel="noopener" aria-label="WhatsApp DPH">WA</a>
+        <a class="mobile-icon-btn" href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <button class="mobile-icon-btn menu mobile-menu-toggle js-mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+      </div>
     </div>
   </header>
 
@@ -92,57 +101,39 @@
           <ul class="contact-list">
             <li><strong>Phone:</strong> <a href="tel:+353872545939">087 2545939</a></li>
             <li><strong>Email:</strong> <a href="mailto:shanedunnewx@gmail.com">shanedunnewx@gmail.com</a></li>
-            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/DpHplumbing" target="_blank" rel="noopener">DpHplumbing</a></li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener">@shanedunnewx</a></li>
           </ul>
         </div>
-        <form class="contact-form js-mail-form" data-form-title="Full Heating System Design Enquiry - DPH Plumbing" data-project-type="Full Heating System Design" novalidate>
-          <label for="design-name">Name</label>
-          <input id="design-name" name="name" type="text" required>
-
-          <label for="design-phone">Phone</label>
-          <input id="design-phone" name="phone" type="tel" required>
-
-          <label for="design-email">Email</label>
-          <input id="design-email" name="email" type="email" required>
-
-          <label for="design-location">Location</label>
-          <input id="design-location" name="location" type="text" required>
-
-          <label for="design-project">Type of project</label>
-          <select id="design-project" name="projectType" required>
-            <option>Heat Pump Installation</option>
-            <option>Underfloor Heating</option>
-            <option selected>Full Heating System Design</option>
-            <option>Energy-Efficient Upgrade</option>
-            <option>Boiler & Plant Room Installation</option>
-            <option>Smart Heating Controls</option>
-            <option>Grant Support & Advice</option>
-          </select>
-
-          <label for="design-message">Message</label>
-          <textarea id="design-message" name="message" rows="4" placeholder="Share your property details and your comfort and efficiency goals." required></textarea>
-
-          <p class="upload-note">Optional photo upload: attach floor plans or plant room photos in your email.</p>
-          <button class="btn btn-solid" type="submit">Send Design Enquiry</button>
-          <p class="form-note" aria-live="polite"></p>
-        </form>
+        <article class="contact-form" aria-label="Contact methods">
+          <h3>Contact DPH Plumbing directly</h3>
+          <p>Use your preferred contact method for a fast response from Shane.</p>
+          <div class="contact-actions">
+            <a class="btn btn-solid" href="tel:+353872545939">Call Shane</a>
+            <a class="btn btn-ghost" href="mailto:shanedunnewx@gmail.com">Email DPH</a>
+            <a class="btn btn-ghost" href="https://wa.me/353872545939" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>SEAI Registered · RGI Certified · DPH Plumbing</p>
-      <a href="https://www.facebook.com/DpHplumbing" target="_blank" rel="noopener">Facebook</a>
+      <a class="footer-brand" href="index.html" aria-label="DPH Plumbing home">
+        <img src="assets/media/dph-logo.png" alt="DPH Plumbing" loading="lazy" decoding="async">
+      </a>
+      <div class="footer-links">
+        <a href="tel:+353872545939">Call</a>
+        <a href="mailto:shanedunnewx@gmail.com">Email</a>
+        <a href="https://wa.me/353872545939" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
   </footer>
-
-  <div class="mobile-sticky">
-    <a href="tel:+353872545939">Call</a>
-    <a href="https://wa.me/353872545939" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="#service-contact">Quote</a>
-  </div>
 
   <script src="script.js" defer></script>
 </body>
 </html>
+
+

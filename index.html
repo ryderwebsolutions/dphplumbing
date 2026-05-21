@@ -6,19 +6,23 @@
   <title>DPH Plumbing | SEAI & RGI Heating Specialists</title>
   <meta name="description" content="Premium heat pump, underfloor heating, and full system design specialists across Wexford, Dublin, Wicklow, Kilkenny, Carlow and Naas. SEAI grant support and RGI certified installations.">
   <meta name="theme-color" content="#0b1d33">
+  <meta property="og:title" content="DPH Plumbing | SEAI & RGI Heating Specialists">
+  <meta property="og:description" content="Premium heat pump, underfloor heating, and full system design specialists across Leinster.">
+  <meta property="og:image" content="assets/media/dphplumbingflyer.webp">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/media/favicon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header" id="top">
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="DPH Plumbing home">
-        <span class="brand-mark"></span>
-        <span class="brand-text">DPH Plumbing</span>
+        <img class="brand-logo" src="assets/media/dph-logo.png" alt="DPH Plumbing" loading="eager" decoding="async">
       </a>
-      <nav class="desktop-nav" aria-label="Primary">
+      <nav class="desktop-nav" id="main-navigation" aria-label="Primary">
         <div class="menu-group">
           <a class="menu-parent" href="#services">Services</a>
           <div class="mega-menu" aria-label="Service links">
@@ -37,6 +41,12 @@
         <a href="#contact">Contact</a>
       </nav>
       <a class="btn btn-solid btn-small" href="tel:+353872545939">Call 087 2545939</a>
+      <div class="mobile-header-actions" aria-label="Mobile quick actions">
+        <a class="mobile-icon-btn" href="tel:+353872545939" aria-label="Call DPH">Call</a>
+        <a class="mobile-icon-btn wa" href="https://wa.me/353872545939" target="_blank" rel="noopener" aria-label="WhatsApp DPH">WA</a>
+        <a class="mobile-icon-btn" href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <button class="mobile-icon-btn menu mobile-menu-toggle js-mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+      </div>
     </div>
   </header>
 
@@ -44,11 +54,6 @@
     <section class="hero" aria-label="Hero">
       <img class="hero-image" src="assets/media/20240926_125245.webp" alt="Dual modern heat pump units installed by DPH Plumbing" loading="eager" decoding="async">
       <div class="hero-overlay"></div>
-      <div class="hero-video-wrap" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/media/20240926_125245.webp">
-          <source src="assets/media/20240503_120513.mp4" type="video/mp4">
-        </video>
-      </div>
       <div class="container hero-content">
         <p class="eyebrow">Premium Heating & Energy Systems Contractor</p>
         <h1>SEAI & RGI Registered Heating Specialists</h1>
@@ -170,7 +175,7 @@
 
         <article class="case reverse reveal">
           <div class="case-media">
-            <img src="assets/media/20250617_184720.webp" alt="Whole-home underfloor heating installation" loading="lazy" decoding="async">
+            <img src="assets/media/20250617_184720-fixed.jpg" alt="Whole-home underfloor heating installation" loading="lazy" decoding="async">
           </div>
           <div class="case-content">
             <h3>Whole-Home Underfloor Heating System</h3>
@@ -245,64 +250,50 @@
     <section class="section" id="contact">
       <div class="container contact-grid reveal">
         <div>
-          <p class="eyebrow">Request A Quote</p>
-          <h2>Discuss your heat pump or heating project</h2>
-          <p class="contact-intro">DPH Plumbing personally reviews every enquiry.</p>
+          <p class="eyebrow">Direct Contact</p>
+          <h2>Speak with DPH Plumbing directly</h2>
+          <p class="contact-intro">Fastest response is by phone or WhatsApp. You can also email or message on Instagram.</p>
           <ul class="contact-list">
             <li><strong>Phone:</strong> <a href="tel:+353872545939">087 2545939</a></li>
             <li><strong>Email:</strong> <a href="mailto:shanedunnewx@gmail.com">shanedunnewx@gmail.com</a></li>
             <li><strong>Coverage:</strong> South East & Greater Dublin Area</li>
-            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/DpHplumbing" target="_blank" rel="noopener">facebook.com/DpHplumbing</a></li>
-            <li><strong>Social:</strong> Instagram profile available on request</li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener">@shanedunnewx</a></li>
           </ul>
+          <div class="contact-actions">
+            <a class="btn btn-solid" href="tel:+353872545939">Call Shane</a>
+            <a class="btn btn-ghost" href="mailto:shanedunnewx@gmail.com">Email DPH</a>
+            <a class="btn btn-ghost" href="https://wa.me/353872545939" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener">Instagram</a>
+          </div>
         </div>
-        <form class="contact-form js-mail-form" id="quoteForm" data-form-title="New DPH Plumbing Website Enquiry" novalidate>
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required>
-
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" required>
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
-
-          <label for="location">Location</label>
-          <input id="location" name="location" type="text" required>
-
-          <label for="projectType">Type of project</label>
-          <select id="projectType" name="projectType" required>
-            <option value="">Select project type</option>
-            <option>Heat Pump Installation</option>
-            <option>Underfloor Heating</option>
-            <option>Heating System Upgrade</option>
-            <option>Plant Room / Boiler Installation</option>
-            <option>Smart Controls</option>
-            <option>Other</option>
-          </select>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your home, current setup and goals." required></textarea>
-
-          <p class="upload-note">Optional photo upload: attach photos when emailing your enquiry and we can assess your project faster.</p>
-          <button class="btn btn-solid" type="submit">Send Enquiry</button>
-          <p class="form-note" id="formNote" aria-live="polite"></p>
-        </form>
+        <article class="contact-form" aria-label="Contact methods">
+          <h3>Contact Options</h3>
+          <p>Choose the channel that suits you and get a direct response from DPH Plumbing.</p>
+          <div class="contact-actions">
+            <a class="btn btn-solid" href="tel:+353872545939">Call 087 2545939</a>
+            <a class="btn btn-ghost" href="mailto:shanedunnewx@gmail.com">shanedunnewx@gmail.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/353872545939" target="_blank" rel="noopener">Open WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener">Open Instagram</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>DPH Plumbing · Intelligent Heating · SEAI & RGI Registered</p>
-      <a href="#top">Back to top</a>
+      <a class="footer-brand" href="#top" aria-label="DPH Plumbing home">
+        <img src="assets/media/dph-logo.png" alt="DPH Plumbing" loading="lazy" decoding="async">
+      </a>
+      <div class="footer-links">
+        <a href="tel:+353872545939">Call</a>
+        <a href="mailto:shanedunnewx@gmail.com">Email</a>
+        <a href="https://wa.me/353872545939" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/shanedunnewx/" target="_blank" rel="noopener">Instagram</a>
+        <a href="#top">Back to top</a>
+      </div>
     </div>
   </footer>
-
-  <div class="mobile-sticky" aria-label="Quick mobile actions">
-    <a href="tel:+353872545939">Call</a>
-    <a href="https://wa.me/353872545939" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="#contact">Quote</a>
-  </div>
 
   <script src="script.js" defer></script>
 </body>
