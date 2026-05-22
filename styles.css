@@ -619,11 +619,11 @@ p {
   display: none;
   margin-left: auto;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .mobile-icon-btn {
-  min-width: 44px;
+  min-width: 46px;
   min-height: 44px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.28);
@@ -631,11 +631,11 @@ p {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 8px;
 }
 
 .mobile-icon-btn.wa {
@@ -652,7 +652,7 @@ p {
 }
 
 .mobile-icon-btn.menu {
-  min-width: 56px;
+  min-width: 54px;
 }
 
 .mobile-icon-btn:hover {
@@ -714,7 +714,7 @@ p {
   }
 
   .brand-logo {
-    width: min(46vw, 190px);
+    width: min(40vw, 168px);
   }
 
   .mobile-header-actions {
